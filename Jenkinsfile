@@ -1,12 +1,17 @@
 pipeline{
-    agent any
+    agent{label 'master'}
+    tools{maven 'M3'}
     stages{
         stage('Checkout'){
           steps{
                git branch: 'main' , url: 'https://github.com/eliawad80/SpringPetClinic_jenkins.git'
             }
         }
-
+        stage('Compile'){
+            steps{
+                sh 'mvn compile'
+            }
+        }
         stage('Test'){
             steps{
                 sh 'mvn test'
