@@ -1,6 +1,6 @@
 pipeline{
     agent any
-    tools{maven 'M3'}
+    tools{ mvnw }
     stages{
         stage('Checkout'){
           steps{
@@ -9,18 +9,18 @@ pipeline{
         }
         stage('Compile'){
             steps{
-                sh 'mvn compile'
+                sh './mvnw compile'
             }
         }
         stage('Test'){
             steps{
-                sh 'mvn test'
+                sh './mvnw test'
                 
             }
         }
         stage('Package'){
             steps{
-                sh 'mvn package'
+                sh './mvnw package'
             }
         }
         stage('Deploy'){
