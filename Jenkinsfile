@@ -1,6 +1,5 @@
 pipeline{
     agent any
-    tools{ mvnw }
     stages{
         stage('Checkout'){
           steps{
