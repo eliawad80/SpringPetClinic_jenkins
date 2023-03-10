@@ -83,8 +83,8 @@
         mode: "u+x,g+x"
     - name: Cloning the  repo from github
       ansible.builtin.git:
-        repo: https://github.com/eliawad80/BRIEFING-Jenkins-freestyle-project-elias.git
-        dest: /home/becode/BRIEFING-Jenkins-freestyle-project-elias
+        repo: https://github.com/eliawad80/SpringPetClinic_jenkins.gitt
+        dest: /home/becode/SpringPetClinic_jenkins
         clone: yes
                         #version: master
       when: false
@@ -101,4 +101,4 @@
       command: >
         /usr/local/bin/docker-compose up -d -f docker-compose-jenkins.yml 
       args:
-        chdir: "/home/becode/BRIEFING-Jenkins-freestyle-project-elias"
+        chdir: "/home/becode/SpringPetClinic_jenkins"
